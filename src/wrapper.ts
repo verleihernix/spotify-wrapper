@@ -83,6 +83,8 @@ export class Wrapper {
     private clientId: string;
     private clientSecret: string;
     private accessToken: string | null;
+    public trackanalysis = new TrackAnalysis(this)
+
 
     constructor(clientId: string, clientSecret: string) {
       this.clientId = clientId;
@@ -251,7 +253,7 @@ export class Wrapper {
  * Class for analyzing track features.
  */
 export class TrackAnalysis {
-    private wrapper: Wrapper;
+    public wrapper: Wrapper;
 
     constructor(wrapper: Wrapper) {
         this.wrapper = wrapper;
@@ -280,4 +282,5 @@ export class TrackAnalysis {
 
         return trackFeatures;
     }
+
 }
